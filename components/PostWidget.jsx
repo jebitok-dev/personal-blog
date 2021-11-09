@@ -1,9 +1,10 @@
 import React from 'react'
 
-const PostWidget = () => {
+const PostWidget = ({post}) => {
     return (
         <div>
-            PostWidget
+            {post.title}
+            {post.excerpt}
         </div>
     )
 }
