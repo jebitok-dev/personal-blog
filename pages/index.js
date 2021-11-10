@@ -2,7 +2,7 @@ import Head from 'next/head';
 import {PostCard, Categories, PostWidget} from '../components/index';
 import {getPosts} from "../services";
 
-/* eslint-disable*/ 
+// /* eslint-disable*/ 
 export default function Home({posts}) {
   return (
     <div className="container mx-auto px-10 mb-8">
