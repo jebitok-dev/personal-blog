@@ -1,9 +1,9 @@
-import {request, gql} from 'graphql-request';
+import { request, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-export const getPosts = async () =>  {
-    const query = gql`
+export const getPosts = async () => {
+  const query = gql`
     query MyQuery {
         postsConnection {
           edges {
@@ -31,14 +31,14 @@ export const getPosts = async () =>  {
           }
         }
       }
-    `
+    `;
 
-    const result = await request(graphqlAPI, query);
+  const result = await request(graphqlAPI, query);
 
-    return result.postsConnection.edges;
-}
+  return result.postsConnection.edges;
+};
 
-export const getPostDetails = async (slug) =>  {
+export const getPostDetails = async (slug) => {
   const query = gql`
   query GetPostDetails($slug: String!) {
     post(where: {slug: $slug}) {
@@ -66,14 +66,14 @@ export const getPostDetails = async (slug) =>  {
       }
     }
   }
-  `
+  `;
 
-  const result = await request(graphqlAPI, query, {slug});
+  const result = await request(graphqlAPI, query, { slug });
 
   return result.post;
-}
+};
 
-export const getRecentPosts = async() => {
+export const getRecentPosts = async () => {
   const query = gql`
   query GetPostDetails(){
     posts(orderBy: createdAt_ASC
@@ -87,13 +87,13 @@ export const getRecentPosts = async() => {
       slug
     }
   }
-  `
+  `;
   const result = await request(graphqlAPI, query);
 
   return result.posts;
-}
+};
 
-export const getSimilarPosts = async(categories, slug) => {
+export const getSimilarPosts = async (categories, slug) => {
   const query = gql`
     query.getPostDetails($slug: String!, $categories: [String!]) {
       posts(
@@ -108,13 +108,13 @@ export const getSimilarPosts = async(categories, slug) => {
         slug
       }
     }
-  `
-  const result = await request(graphqlAPI, query, {categories, slug});
+  `;
+  const result = await request(graphqlAPI, query, { categories, slug });
 
   return result.posts;
-}
+};
 
-export const getCategories = async() => {
+export const getCategories = async () => {
   const query = gql`
     query GetCategories {
       categories {
@@ -122,17 +122,17 @@ export const getCategories = async() => {
         slug
       }
     }
-  `
+  `;
   const result = await request(graphqlAPI, query);
 
   return result.categories;
-}
+};
 
-export const submitComment = async(obj) => {
+export const submitComment = async (obj) => {
   const result = await fetch('/api/comments', {
     method: 'POST',
     body: JSON.stringify(obj),
   });
 
   return result.json();
-}
+};
