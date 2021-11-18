@@ -33,6 +33,6 @@ const Comments = ({slug}) => {
             </div>
         </>
     )
-}
+};
 
-export default Comments
+export default Comments;
