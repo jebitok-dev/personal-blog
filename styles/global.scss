@@ -1,3 +1,4 @@
+/* stylelint-disable */ 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +10,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  &:before{
-    content:'';
+
+  &::before {
+    content: '';
     content: "";
     width: 100%;
     height: 100vh;
@@ -27,31 +29,32 @@ body {
   }
 }
 
-.text-shadow{
-  text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
-}
-
-.adjacent-post{
-  & .arrow-btn{
-    transition: width 300ms ease;
-    width: 50px;
-  }
-  &:hover{
-    & .arrow-btn{
-      width: 60px;
-    }
-  }
+.text-shadow {
+  text-shadow: 0 2px 0 rgb(0 0 0 / 30%);
 }
 
 .react-multi-carousel-list {
-  & .arrow-btn{
+  & .arrow-btn {
     transition: width 300ms ease;
     width: 50px;
-    &:hover{
+
+    &:hover {
       width: 60px;
     }
   }
-  
+}
+
+.adjacent-post {
+  & .arrow-btn {
+    transition: width 300ms ease;
+    width: 50px;
+  }
+
+  &:hover {
+    & .arrow-btn {
+      width: 60px;
+    }
+  }
 }
 
 a {

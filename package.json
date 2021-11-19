@@ -2,6 +2,9 @@
   "name": "personal-blog",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=14.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,7 +21,8 @@
     "tailwindcss": "^2.2.19",
     "react-dom": "17.0.2",
     "react-multi-carousel": "^2.6.5",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
