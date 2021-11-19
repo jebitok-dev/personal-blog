@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { submitComment } from '../services';
-
+/* eslint-disable*/ 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);

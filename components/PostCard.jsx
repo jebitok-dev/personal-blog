@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
+/* eslint-disable*/ 
 
 const PostCard = ({post}) => {
     return (
