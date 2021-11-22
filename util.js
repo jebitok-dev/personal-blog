@@ -1,2 +1,2 @@
 /*eslint-disable*/
-export const graphCMSImageLoader = ({ src }) => src;
+export const grpahCMSImageLoader = ({ src }) => src;

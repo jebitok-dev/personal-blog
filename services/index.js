@@ -21,7 +21,7 @@ export const getPosts = async () => {
             slug
             title
             excerpt
-            image {
+            featuredImage {
               url
             }
             categories {
@@ -60,7 +60,7 @@ export const getPostDetails = async (slug) => {
       post(where: {slug: $slug}) {
         title
         excerpt
-        image {
+        featuredImage {
           url
         }
         author{
@@ -96,7 +96,7 @@ export const getSimilarPosts = async (categories, slug) => {
         last: 3
       ) {
         title
-        image {
+        featuredImage {
           url
         }
         createdAt
@@ -118,7 +118,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
       ) {
         title
-        image {
+        featuredImage {
           url
         }
         createdAt
@@ -130,7 +130,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
       ) {
         title
-        image {
+        featuredImage {
           url
         }
         createdAt
@@ -163,7 +163,7 @@ export const getCategoryPost = async (slug) => {
             slug
             title
             excerpt
-            image {
+            featuredImage {
               url
             }
             categories {
@@ -191,7 +191,7 @@ export const getFeaturedPosts = async () => {
             url
           }
         }
-        image {
+        featuredImage {
           url
         }
         title
@@ -242,7 +242,7 @@ export const getRecentPosts = async () => {
         last: 3
       ) {
         title
-        image {
+        featuredImage {
           url
         }
         createdAt
